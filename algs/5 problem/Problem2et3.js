@@ -59,9 +59,9 @@ let products = [
 let budget = 100;
 let popularityCondition= 1500;
 
-popular_products = popularity(products,popularityCondition);
-sorted_products = sort_by_price(popular_products);
-inBudget = under_Budget(budget,sorted_products);
+let popular_products = popularity(products,popularityCondition);
+let sorted_products = sort_by_price(popular_products);
+let inBudget = under_Budget(budget,sorted_products);
 
 console.log(`popular products :` ,sorted_products);
 console.log(`you can buy: `,inBudget,` items :`,inBudget.length);
@@ -80,9 +80,9 @@ let videos = [
 let time = 10;
 let popularityVideo= 2000;
 
-popular_videos = popularity(videos,popularityVideo);
-sorted_videos = sort_by_price(popular_videos);
-inTime = under_Budget(time,sorted_videos);
+let popular_videos = popularity(videos,popularityVideo);
+let sorted_videos = sort_by_price(popular_videos);
+let inTime = under_Budget(time,sorted_videos);
 
 console.log(`popular videos :` ,sorted_videos);
 console.log(`you can watch: `,inTime,` Amount :`,inTime.length);

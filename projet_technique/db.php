@@ -1,16 +1,13 @@
 <?php
-$host="localhost";
-$db="music_db";
-$user="root";
-$pass="";
+$host = "localhost";
+$dbname = "MusicManagement";
+$user = "root";
+$pass = "Alien44@";
 
-try{
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4",$user,$pass,[
-        pdo::ATTR_PERSISTENT => true,
-        pdo::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    ]);
-}catch(PDOException $e){
-    echo "error:". $e->getMessage();
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
 }
-
 ?>

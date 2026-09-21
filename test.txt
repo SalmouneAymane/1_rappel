@@ -1,0 +1,13 @@
+check for error : ($songUpload['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK
+
+naming and saving files :
+ $uploadDir = __DIR__ . "/songs_files/";
+        $fileId = time();
+        $songName = $fileId . "_" . preg_replace('/[^A-Za-z0-9_-]+/', '_', $songTitle)
+        . "." . strtolower(pathinfo($songUpload['name'], PATHINFO_EXTENSION));
+        $coverName = "cover_" . $fileId . "."
+        . strtolower(pathinfo($coverUpload['name'], PATHINFO_EXTENSION));
+
+        if (!move_uploaded_file($songUpload['tmp_name'], $uploadDir . $songName)
+        || !move_uploaded_file($coverUpload['tmp_name'], $uploadDir . $coverName)) {
+            $message = "The files could not be uploaded.";
