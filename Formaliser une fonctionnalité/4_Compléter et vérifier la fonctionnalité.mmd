@@ -1,0 +1,14 @@
+sequenceDiagram
+    actor A as Administrateur
+    participant S as Système
+
+    A->>S: Demande l'ajout d'un Article
+    S-->>A: Affiche le formulaire
+    A->>S: Saisit les informations et valide
+  alt Titre vide(error)
+        S-->>A: Refuse et affiche "Le titre est obligatoire"
+    else status brouilion(alternative)
+        S-->>A: sauvegarde en inactif et rederegie a la list des article
+    else cas nominal
+        S-->>A: Enregistre et rederegie a la list des article
+    end
