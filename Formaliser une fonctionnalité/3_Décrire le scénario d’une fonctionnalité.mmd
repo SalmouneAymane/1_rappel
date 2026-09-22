@@ -1,0 +1,8 @@
+sequenceDiagram
+    actor A as Administrateur
+    participant S as Système
+
+    A->>S: Demande l'ajout d'un Article
+    S-->>A: Affiche le formulaire
+    A->>S: Saisit les informations et valide
+    S-->>A: Enregistre et redirege vers la list des article

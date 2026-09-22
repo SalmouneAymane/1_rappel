@@ -1,0 +1,21 @@
+usecase-beta
+direction LR
+    actor Admin ("Administrateur")
+    actor Auteur  ("Auteur")
+    actor Visiteur ("Visiteur")
+
+    Admin -- "Consulter les catégories"
+    Admin -- "Ajouter une catégorie"
+    Admin -- "Modifier une catégorie"
+    Admin -- "Supprimer une catégorie"
+    Admin -- "Créer un auteur"
+    Admin -- "Valider un article"
+    Admin -- "Publier un article"
+
+    Auteur -- "Ajouter un article"
+    Auteur -- "Modifier un article non publié"
+    Auteur -- "Supprimer un article non publié"
+    Auteur -- "Changer son profil"
+    Auteur -- "Réinitialiser son mot de passe"
+
+    Visiteur -- "Consulter les articles"
